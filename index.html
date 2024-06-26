@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image Slider</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilos para el formulario de registro */
+        .register-form {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000; /* Asegura que esté encima de otros elementos */
+        }
+        .register-form input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        }
+        .register-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .register-form button:hover {
+            background-color: #45a049;
+        }
+        .close-btn {
+            display: block;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .close-btn button {
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Estilos para el nuevo recuadro */
+        .new-box {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/img3.jpg" alt="Logo" class="logo-img">
+        </div>
+        <nav>
+            <a href="" class="active">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="#" id="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <div class="list">
+            <div class="item" style="background-image: url(img/img1.jpeg);">
+                <div class="content">
+                    <div class="title">PAN DE</div>
+                    <div class="name">PLATANO</div>
+                    <div class="des">"Descubre el sabor tropical en cada mordisco con nuestro exquisito pan de plátano, una delicia que endulza tu día con cada rebanada."</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(img/img2.jpeg);">
+                <div class="content">
+                    <div class="title">PAN DE</div>
+                    <div class="name">ZANAHORIA</div>
+                    <div class="des">"Deléitate con nuestro pan de zanahoria, un festín de sabores que cautiva desde el primer bocado. Descubre la perfecta armonía entre lo dulce y lo saludable en cada rebanada. ¡Una experiencia única para los amantes del buen pan!"</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(image/crow.jpg);">
+                <div class="content">
+                    <div class="title">SLIDER</div>
+                    <div class="name">CROW</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa similique consequuntur, reprehenderit dicta repudiandae.</div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(image/butterfly1.jpeg);">
+                <div class="content">
+                    <div class="title">SLIDER</div>
+                    <div class="name">BUTTERFLY</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa similique consequuntur, reprehenderit dicta repudiandae.</div>
+                </div>
+            </div>
+        </div>
+
+        <!--next prev button-->
+        <div class="arrows">
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+        </div>
+
+        <!-- time running -->
+        <div class="timeRunning"></div>
+    </div>
+
+    <!-- Formulario de registro -->
+    <div class="register-form" id="register-form">
+        <div class="close-btn">
+            <button id="close-btn">&times;</button>
+        </div>
+        <h2>Register</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="register-submit">Register</button>
+    </div>
+
+    <!-- Nuevo recuadro -->
+    <div class="new-box">
+        <!-- Este recuadro está vacío y listo para que lo llenes con tu contenido -->
+    </div>
+
+    <!-- Enlace al archivo adicional -->
+    <div class="additional-content">
+        <a href="additional.html">Ver más contenido</a>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('register-form').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('register-form').style.display = 'none';
+        });
+
+        document.getElementById('register-submit').addEventListener('click', function() {
+            alert('Registration successful!');
+            document.getElementById('register-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
